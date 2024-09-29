@@ -49,7 +49,7 @@ class MyComponent extends StreamlitComponentBase<DiagramViewerProps> {
     }
 
     return (
-      <div style={{height: '1000px'}}>
+      <div style={{minHeight: window.outerHeight - 200}}>
       <TableLevelDetailProvider>
         <TablesPositionsProvider tables={tables}>
           <MainProviders tables={tables} enums={enums}>

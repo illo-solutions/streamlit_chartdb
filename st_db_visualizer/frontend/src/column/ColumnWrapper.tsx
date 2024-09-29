@@ -42,7 +42,7 @@ const ColumnWrapper = ({
   return (
     <Group onMouseOver={handleOnHover} onMouseLeave={handleOnLeave} y={offsetY}>
       <Rect
-        fill={highlighted ? highlightColor : "transparent"}
+        fill={highlighted ? 'black' : "transparent"}
         width={tablePreferredWidth}
         height={COLUMN_HEIGHT}
       />

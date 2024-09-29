@@ -400,6 +400,58 @@ chart_input = {
             "indexes": []
         },
         {
+            "name": "orders",
+            "fields": [
+                {
+                    "name": "orderid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": False
+                    },
+                    "pk": True,
+                    "is_relation": False,
+                    "relational_tables": None,
+                    "not_None": True
+                },
+                {
+                    "name": "customerid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": False
+                    },
+                    "pk": False,
+                    "is_relation": True,
+                    "relational_tables": [
+                        "customers"
+                    ],
+                    "not_None": False
+                },
+                {
+                    "name": "orderdate",
+                    "type": {
+                        "type_name": "date",
+                        "is_enum": False
+                    },
+                    "pk": False,
+                    "is_relation": False,
+                    "relational_tables": None,
+                    "not_None": False
+                },
+                {
+                    "name": "totalamount",
+                    "type": {
+                        "type_name": "decimal",
+                        "is_enum": False
+                    },
+                    "pk": False,
+                    "is_relation": False,
+                    "relational_tables": None,
+                    "not_None": False
+                }
+            ],
+            "indexes": []
+        },
+{
             "name": "customers",
             "fields": [
                 {
@@ -450,58 +502,6 @@ chart_input = {
                     "name": "phone",
                     "type": {
                         "type_name": "varchar",
-                        "is_enum": False
-                    },
-                    "pk": False,
-                    "is_relation": False,
-                    "relational_tables": None,
-                    "not_None": False
-                }
-            ],
-            "indexes": []
-        },
-        {
-            "name": "orders",
-            "fields": [
-                {
-                    "name": "orderid",
-                    "type": {
-                        "type_name": "int",
-                        "is_enum": False
-                    },
-                    "pk": True,
-                    "is_relation": False,
-                    "relational_tables": None,
-                    "not_None": True
-                },
-                {
-                    "name": "customerid",
-                    "type": {
-                        "type_name": "int",
-                        "is_enum": False
-                    },
-                    "pk": False,
-                    "is_relation": True,
-                    "relational_tables": [
-                        "customers"
-                    ],
-                    "not_None": False
-                },
-                {
-                    "name": "orderdate",
-                    "type": {
-                        "type_name": "date",
-                        "is_enum": False
-                    },
-                    "pk": False,
-                    "is_relation": False,
-                    "relational_tables": None,
-                    "not_None": False
-                },
-                {
-                    "name": "totalamount",
-                    "type": {
-                        "type_name": "decimal",
                         "is_enum": False
                     },
                     "pk": False,
@@ -750,6 +750,10 @@ chart_input = {
         }
     ]
 }
-
 st.set_page_config(layout="wide")
+
+with st.sidebar:
+    st.button(label='hola')
+
+st.header('Your DB diagram')
 chartdb(chart_input, key="foo")

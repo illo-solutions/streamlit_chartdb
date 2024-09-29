@@ -31,11 +31,12 @@ const DiagramWrapper = ({ children }: DiagramWrapperProps) => {
     useStageStartingState();
   useEffect(() => {
     if (stageRef.current != null) {
-      // stageRef.current.scale({
-      //   x: defaultStageScale,
-      //   y: defaultStageScale,
-      // });
-      stageRef.current.position(defaultStagePosition);
+      let ratio = (window.outerWidth / stageRef.current.bufferCanvas.width) * 0.95
+      stageRef.current.scale({
+        x: ratio,
+        y: ratio,
+      });
+      stageRef.current.position({x: 0, y: 0});
     }
   }, [defaultStageScale, defaultStagePosition]);
 
