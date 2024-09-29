@@ -1,0 +1,749 @@
+{
+    "refs": [
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "books",
+                    "fieldNames": [
+                        "authorid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "authors",
+                    "fieldNames": [
+                        "authorid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "books",
+                    "fieldNames": [
+                        "publisherid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "publishers",
+                    "fieldNames": [
+                        "publisherid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "books",
+                    "fieldNames": [
+                        "categoryid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "categories",
+                    "fieldNames": [
+                        "categoryid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "orders",
+                    "fieldNames": [
+                        "customerid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "customers",
+                    "fieldNames": [
+                        "customerid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "orderdetails",
+                    "fieldNames": [
+                        "orderid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "orders",
+                    "fieldNames": [
+                        "orderid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "orderdetails",
+                    "fieldNames": [
+                        "bookid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "books",
+                    "fieldNames": [
+                        "bookid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "shoppingcarts",
+                    "fieldNames": [
+                        "customerid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "customers",
+                    "fieldNames": [
+                        "customerid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "reviews",
+                    "fieldNames": [
+                        "bookid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "books",
+                    "fieldNames": [
+                        "bookid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "reviews",
+                    "fieldNames": [
+                        "customerid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "customers",
+                    "fieldNames": [
+                        "customerid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "cartitems",
+                    "fieldNames": [
+                        "cartid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "shoppingcarts",
+                    "fieldNames": [
+                        "cartid"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": null,
+            "endpoints": [
+                {
+                    "relation": "1",
+                    "tableName": "cartitems",
+                    "fieldNames": [
+                        "bookid"
+                    ]
+                },
+                {
+                    "relation": "*",
+                    "tableName": "books",
+                    "fieldNames": [
+                        "bookid"
+                    ]
+                }
+            ]
+        }
+    ],
+    "enums": [],
+    "tables": [
+        {
+            "name": "authors",
+            "fields": [
+                {
+                    "name": "authorid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "name",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "birthdate",
+                    "type": {
+                        "type_name": "date",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "books",
+            "fields": [
+                {
+                    "name": "bookid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "title",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "authorid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "authors"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "publisherid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "publishers"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "categoryid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "categories"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "publisheddate",
+                    "type": {
+                        "type_name": "date",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "categories",
+            "fields": [
+                {
+                    "name": "categoryid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "categoryname",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "publishers",
+            "fields": [
+                {
+                    "name": "publisherid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "name",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "address",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "customers",
+            "fields": [
+                {
+                    "name": "customerid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "firstname",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "lastname",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "email",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                },
+                {
+                    "name": "phone",
+                    "type": {
+                        "type_name": "varchar",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "orders",
+            "fields": [
+                {
+                    "name": "orderid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "customerid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "customers"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "orderdate",
+                    "type": {
+                        "type_name": "date",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                },
+                {
+                    "name": "totalamount",
+                    "type": {
+                        "type_name": "decimal",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "orderdetails",
+            "fields": [
+                {
+                    "name": "orderdetailid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "orderid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "orders"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "bookid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "books"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "quantity",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                },
+                {
+                    "name": "price",
+                    "type": {
+                        "type_name": "decimal",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "shoppingcarts",
+            "fields": [
+                {
+                    "name": "cartid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "customerid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "customers"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "createddate",
+                    "type": {
+                        "type_name": "date",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "reviews",
+            "fields": [
+                {
+                    "name": "reviewid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "bookid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "books"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "customerid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "customers"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "rating",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                },
+                {
+                    "name": "comment",
+                    "type": {
+                        "type_name": "text",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                },
+                {
+                    "name": "reviewdate",
+                    "type": {
+                        "type_name": "date",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "cartitems",
+            "fields": [
+                {
+                    "name": "cartitemid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": true,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": true
+                },
+                {
+                    "name": "cartid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "shoppingcarts"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "bookid",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": true,
+                    "relational_tables": [
+                        "books"
+                    ],
+                    "not_null": false
+                },
+                {
+                    "name": "quantity",
+                    "type": {
+                        "type_name": "int",
+                        "is_enum": false
+                    },
+                    "pk": false,
+                    "is_relation": false,
+                    "relational_tables": null,
+                    "not_null": false
+                }
+            ],
+            "indexes": []
+        }
+    ]
+}
